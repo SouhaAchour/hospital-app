@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Ajouter un utilisateur</h1>
+    <form action="/user/add" method="POST">   <!-- 👈 correspond à router.post -->
+    Nom:
+    <input type="text" name="lastname" value=""/><br />
+
+    Prénom:
+    <input type="text" name="firstname" value=""/><br/>
+
+    <input type="submit" value="save"/><br/>
+    <input type="submit" value="Retour à la liste" formaction="/user"/>
+</form>
+
+</body>
+</html>

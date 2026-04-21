@@ -1,0 +1,27 @@
+<div class="page">
+  <div class="card">
+    <h2>Créer un compte</h2>
+    <p class="subtitle">Inscription patient</p>
+
+    <form (ngSubmit)="register()">
+      <input type="text" [(ngModel)]="name" name="name" placeholder="Nom du compte" required>
+      <input type="email" [(ngModel)]="email" name="email" placeholder="Email" required>
+      <input type="password" [(ngModel)]="password" name="password" placeholder="Mot de passe" required>
+      <input type="text" [(ngModel)]="first_name" name="first_name" placeholder="Prénom" required>
+      <input type="text" [(ngModel)]="last_name" name="last_name" placeholder="Nom" required>
+      <input type="date" [(ngModel)]="date_of_birth" name="date_of_birth">
+      <input type="text" [(ngModel)]="phone" name="phone" placeholder="Téléphone">
+
+      <button class="btn btn-primary full" type="submit">S'inscrire</button>
+    </form>
+
+    <div *ngIf="errorMessage" class="error">
+      {{ errorMessage }}
+    </div>
+
+    <div class="links">
+      <button type="button" class="btn btn-light" (click)="goToLogin()">Se connecter</button>
+      <button type="button" class="btn btn-outline" (click)="goToHome()">Retour à l’accueil</button>
+    </div>
+  </div>
+</div>

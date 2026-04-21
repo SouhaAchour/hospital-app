@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modifier un utilisateur</title>
+</head>
+<body>
+    <h1>Modifier un utilisateur</h1>
+
+<form action="/user/update" method="POST">
+    Nom :
+    <input type="text" name="lastname" value ="<%= lastname %>" /><br />
+
+    Prénom :
+    <input type="text" name="firstname" value ="<%= firstname %>" /><br/>
+
+    <!-- Identifiant caché -->
+    <input type="hidden" name="iduser" value="<%= iduser %>">
+
+    <br/>
+    <input type="submit" value="Mettre à jour" />
+    <input type="submit" value="Retour à la liste" formaction="/user" />
+</form>
+
+
+</body>
+</html>

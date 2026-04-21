@@ -1,0 +1,20 @@
+<div class="page">
+  <div class="card">
+    <h2>Espace médecin</h2>
+    <p class="subtitle">Bienvenue {{ userName }}</p>
+
+    <div class="actions">
+      <button class="btn btn-primary" (click)="goToRequests()">
+        Voir les prescriptions existantes
+      </button>
+
+      <button class="btn btn-secondary" (click)="goToCreateRequest()">
+        Créer une nouvelle prescription
+      </button>
+    </div>
+
+    <button class="btn btn-danger logout" (click)="logout()">
+      Se déconnecter
+    </button>
+  </div>
+</div>

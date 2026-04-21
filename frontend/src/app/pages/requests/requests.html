@@ -1,0 +1,40 @@
+<div class="page">
+  <div class="card wide">
+    <div class="topbar">
+      <div>
+        <h2>Requests</h2>
+        <p class="subtitle">Bienvenue {{ userName }}</p>
+      </div>
+
+      <button class="btn btn-danger" type="button" (click)="logout()">
+        Se déconnecter
+      </button>
+    </div>
+
+    <p *ngIf="loading">Chargement...</p>
+
+    <table *ngIf="!loading && requests.length > 0">
+      <tr>
+        <th>ID</th>
+        <th>Patient</th>
+        <th>Doctor</th>
+        <th>Exam</th>
+        <th>Urgency</th>
+        <th>Status</th>
+      </tr>
+
+      <tr *ngFor="let request of requests">
+        <td>{{ request.id }}</td>
+        <td>{{ request.first_name }} {{ request.last_name }}</td>
+        <td>{{ request.doctor_name }}</td>
+        <td>{{ request.exam_name }}</td>
+        <td>{{ request.urgency_level }}</td>
+        <td>{{ request.status }}</td>
+      </tr>
+    </table>
+
+    <p *ngIf="!loading && requests.length === 0" class="empty">
+      Aucune demande trouvée.
+    </p>
+  </div>
+</div>

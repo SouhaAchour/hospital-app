@@ -1,0 +1,52 @@
+<div class="page">
+  <div class="card">
+    <h2>Nouvelle prescription</h2>
+    <p class="subtitle">Créer une demande médicale</p>
+
+    <form (ngSubmit)="createRequest()">
+      <input
+        type="number"
+        [(ngModel)]="patient_id"
+        name="patient_id"
+        placeholder="Patient ID"
+        required
+      >
+
+      <input
+        type="number"
+        [(ngModel)]="exam_type_id"
+        name="exam_type_id"
+        placeholder="Exam Type ID"
+        required
+      >
+
+      <textarea
+        [(ngModel)]="clinical_information"
+        name="clinical_information"
+        placeholder="Clinical information"
+        rows="4"
+      ></textarea>
+
+      <select [(ngModel)]="urgency_level" name="urgency_level" required>
+        <option value="" disabled selected>Choisir le niveau d'urgence</option>
+        <option value="low">Low</option>
+        <option value="medium">Medium</option>
+        <option value="high">High</option>
+      </select>
+
+      <button type="submit" class="btn btn-primary">Créer</button>
+    </form>
+
+    <div *ngIf="successMessage" class="success">
+      {{ successMessage }}
+    </div>
+
+    <div *ngIf="errorMessage" class="error">
+      {{ errorMessage }}
+    </div>
+
+    <button type="button" class="btn btn-light back" (click)="goToDoctorHome()">
+      Retour espace médecin
+    </button>
+  </div>
+</div>
